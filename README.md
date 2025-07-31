@@ -68,8 +68,8 @@
             const pass = document.getElementById("password").value;
             if (user === storedUsername && pass === storedPassword) {
                 document.getElementById("loginPanel").style.display = "none";
-                document.getElementById("controlPanel").style.display = "block";
-                document.getElementById("changePassPanel").style.display = "block";
+                document.getElementById("controlPanel").style.display = "none";
+                document.getElementById("changePassPanel").style.display = "none";
             } else {
                 alert("Incorrect username or password!");
             }
