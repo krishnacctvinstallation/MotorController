@@ -8,7 +8,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Motor Controller Login</title>
   <style>
+    body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.login-section {
+  background-image: url('login-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+    .login, .control { max-width: 300px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .hidden { display: none; }
+    button { margin-top: 10px; width: 100%; padding: 10px; }
+  </style>
 </head>
+<body>
+<div class="login-section">
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+  </div>
+</div>
+  <div class="login" id="loginBox">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" required /><br><br>
+    <input type="password" id="password" placeholder="Password" required /><br><br>
+    <button onclick="login()">Login</button>
+    <p id="error" style="color: red;"></p>
+  </div>
+
   <div class="control hidden" id="controlBox">
     <h2>Motor Controller</h2>
     <button onclick="motorOn()">🟢 Motor ON</button>
@@ -42,10 +79,8 @@
     }
     function v1() {
       alert("v1 phase live voltage!");
-      // connected traminl voltage v1
     }
   </script>
 
 </body>
 </html>
-
