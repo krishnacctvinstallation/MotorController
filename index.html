@@ -158,3 +158,87 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('login_background.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .login-container {
+            width: 300px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            margin: 100px auto;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 30px;
+        }
+        .login-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-container button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .hidden-content {
+            display: none;
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>LOGIN</h2>
+        <input type="text" placeholder="Username" id="username"><br>
+        <input type="password" placeholder="Password" id="password"><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="hidden-content" id="content">
+        <p>Voltage: <span id="voltage">--</span> V</p>
+        <p>Current: <span id="current">--</span> A</p>
+        <p>RPM: <span id="rpm">--</span></p>
+    </div>
+
+    <script>
+        function login() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if (user && pass) {
+                document.querySelector('.login-container').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                setInterval(updateValues, 1000);
+            } else {
+                alert('Enter username and password');
+            }
+        }
+
+        function updateValues() {
+            document.getElementById('voltage').textContent = (220 + Math.random() * 10).toFixed(2);
+            document.getElementById('current').textContent = (5 + Math.random()).toFixed(2);
+            document.getElementById('rpm').textContent = Math.floor(1450 + Math.random() * 100);
+        }
+    </script>
+</body>
+</html>
