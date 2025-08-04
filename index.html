@@ -46,12 +46,11 @@
     <button onclick="motorOn()">🟢 Motor ON</button>
     <button onclick="motorOff()">🔴 Motor OFF</button>
 
-    <div class="live-values">
-      <div>🔌 Voltage: <span id="v1">--</span>V | <span id="v2">--</span>V | <span id="v3">--</span>V</div>
-      <div>⚡ Current: <span id="c1">--</span>A | <span id="c2">--</span>A | <span id="c3">--</span>A</div>
-      <div>⚙️ Motor RPM: <span id="rpm">--</span></div>
-    </div>
-  </div>
+    <div id="realtime-data" style="color: white; text-align: center; margin-top: 30px;">
+  <p>Voltage: <span id="v1">--</span>V | <span id="v2">--</span>V | <span id="v3">--</span>V</div>
+  <p>Current: <span id="c1">--</span>V | <span id="c2">--</span>V | <span id="c3">--</span>V</div>
+  <p>RPM: <span id="rpm">--</span></p>
+</div>
 
   <script>
     const correctUser = "ahir";
@@ -67,7 +66,7 @@
         document.getElementById("loginBackground").classList.remove("hidden");
         simulateLiveData();
       } else {
-        document.getElementById("error").innerText = "Invalid credentials.";
+        document.getElementById("error").innerText = "so sorry 🖕🖕🖕";
       }
     }
 
