@@ -103,14 +103,15 @@
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
 
-      if (user === correctUser && pass === correctPass) {
+    .hidden {
+      if (user === correctUser && pass === correctPass) {
         document.getElementById("loginSection").classList.add("hidden");
         document.getElementById("controlSection").classList.remove("hidden");
         startLiveData();
       } else {
         document.getElementById("error").innerText = "so sorry🖕🖕🖕!";
       }
-    }
+    
 
     function motorOn() {
       alert("Motor ON command sent!");
@@ -128,15 +129,15 @@
     function startLiveData() {
       setInterval(() => {
         if (arduinoConnected) {
-          document.getElementById("v1").innerText = (220 + Math.random() * 10).toFixed(1);
-          document.getElementById("v2").innerText = (221 + Math.random() * 10).toFixed(1);
-          document.getElementById("v3").innerText = (222 + Math.random() * 10).toFixed(1);
+          document.getElementById("v1").innerText = (0).toFixed(1);
+          document.getElementById("v2").innerText = (0).toFixed(1);
+          document.getElementById("v3").innerText = (0).toFixed(1);
 
-          document.getElementById("c1").innerText = (5 + Math.random() * 2).toFixed(2);
-          document.getElementById("c2").innerText = (5.2 + Math.random() * 2).toFixed(2);
-          document.getElementById("c3").innerText = (5.4 + Math.random() * 2).toFixed(2);
+          document.getElementById("c1").innerText = (0).toFixed(2);
+          document.getElementById("c2").innerText = (0).toFixed(2);
+          document.getElementById("c3").innerText = (0).toFixed(2);
 
-          document.getElementById("rpm").innerText = Math.floor(1400 + Math.random() * 100);
+          document.getElementById("rpm").innerText = Math.floor(0);
         } else {
           // If Arduino is not connected, show default "--"
           document.getElementById("v1").innerText = "--";
@@ -148,7 +149,7 @@
           document.getElementById("rpm").innerText = "--";
         }
       }, 2000);
-    }
+    }}
   </script>
 
 </body>
