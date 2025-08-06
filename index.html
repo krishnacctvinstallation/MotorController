@@ -76,7 +76,7 @@
       <p id="error" style="color: red;"></p>
     </div>
   </div>
-
+    
   <!-- CONTROL SECTION -->
   <div class="background hidden" id="controlSection">
     <div class="box">
@@ -99,16 +99,16 @@
     const correctPass = "12345";
     let arduinoConnected = false;
 
-    function login() {
+    function login() 
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
 
-    .hidden {
+    
       if (user === correctUser && pass === correctPass) {
         document.getElementById("loginSection").classList.add("hidden");
-        document.getElementById("controlSection").classList.remove("hidden");
+        document.getElementById("controlSection").classList.remove("hidden");}
         startLiveData();
-      } else {
+       else {
         document.getElementById("error").innerText = "so sorry🖕🖕🖕!";
       }
     
